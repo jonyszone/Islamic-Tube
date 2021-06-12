@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TapToIncrement</string>
+    <string name="tap_button">Tap To Increment</string>
+    <string name="you_have">You have: </string>
+    <string name="show_info">Show Info</string>
+    <string name="textview" />
 </resources>
