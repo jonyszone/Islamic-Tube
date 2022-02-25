@@ -4,4 +4,6 @@
     <string name="you_have">You have: </string>
     <string name="show_info">Show Info</string>
     <string name="textview" />
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
