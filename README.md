@@ -6,7 +6,7 @@ This application increases amount of dollar.
 <h3 align="center">Flow of the project</h3>
 
   <p align="center">
-    An awesome application for adding daily expense list !
+    An awesome application for practicing Kotlin !
     <br />
     <a href="https://github.com/jonyszone/TapToIncrement"><strong>Explore the docs »</strong></a>
     <br />
