@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="17" />
+    <bytecodeTargetLevel target="17">
+      <module name="Delish.base" target="17" />
+      <module name="Delish.common.compose" target="17" />
+      <module name="Delish.common.imageloading" target="17" />
+      <module name="Delish.common.resources" target="17" />
+      <module name="Delish.data" target="17" />
+      <module name="Delish.domain" target="17" />
+      <module name="Delish.mobile" target="17" />
+      <module name="Delish.ui.bookmark" target="17" />
+      <module name="Delish.ui.details" target="17" />
+      <module name="Delish.ui.discover" target="17" />
+      <module name="Delish.ui.onboarding" target="17" />
+      <module name="Delish.ui.search" target="17" />
+      <module name="Delish.ui.settings" target="17" />
+      <module name="IslamicTube.base" target="17" />
+      <module name="IslamicTube.common.compose" target="17" />
+      <module name="IslamicTube.common.imageloading" target="17" />
+      <module name="IslamicTube.common.resources" target="17" />
+      <module name="IslamicTube.data" target="17" />
+      <module name="IslamicTube.domain" target="17" />
+      <module name="IslamicTube.mobile" target="17" />
+      <module name="IslamicTube.ui.bookmark" target="17" />
+      <module name="IslamicTube.ui.details" target="17" />
+      <module name="IslamicTube.ui.discover" target="17" />
+      <module name="IslamicTube.ui.onboarding" target="17" />
+      <module name="IslamicTube.ui.search" target="17" />
+      <module name="IslamicTube.ui.settings" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
