@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 fun YoutubeChip(selected: Boolean, text: String, modifier: Modifier = Modifier) {
     Surface(
         color = when {
-            selected -> MaterialTheme.colorScheme.surface
+            selected -> Color.Red //MaterialTheme.colorScheme.surface
             else -> Color.LightGray
         },
 
@@ -43,7 +43,7 @@ fun YoutubeChip(selected: Boolean, text: String, modifier: Modifier = Modifier) 
         ),
         modifier = modifier
     ) {
-/*        Text(
+        Text(
             text = text,
             textAlign = TextAlign.Center,
             style = MaterialTheme.typography.bodyMedium,
@@ -51,6 +51,6 @@ fun YoutubeChip(selected: Boolean, text: String, modifier: Modifier = Modifier) 
                 vertical = 8.dp,
                 horizontal = 12.dp,
             )
-        )*/
+        )
     }
 }
