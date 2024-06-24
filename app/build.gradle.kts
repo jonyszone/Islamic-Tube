@@ -74,4 +74,15 @@ dependencies {
     implementation(libs.converter.gson)
     implementation(libs.logging.interceptor)
     implementation(libs.gson)
+
+    //Video player
+    implementation(libs.exo.player)
+    implementation(libs.exo.player.session)
+    implementation(libs.exo.player.dash)
+    implementation(libs.exo.player.hls)
+    implementation(libs.exo.player.ui)
+    implementation(libs.compose.video)
+
+
+
 }
