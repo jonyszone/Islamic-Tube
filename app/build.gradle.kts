@@ -75,6 +75,16 @@ dependencies {
     implementation(libs.logging.interceptor)
     implementation(libs.gson)
 
+    // network
+    implementation(libs.sandwich)
+    implementation(platform(libs.retrofit.bom))
+    implementation(platform(libs.okhttp.bom))
+    testImplementation(libs.okhttp.mockwebserver)
+
+    // coroutines
+    implementation(libs.kotlinx.coroutines.android)
+    testImplementation(libs.kotlinx.coroutines.test)
+
     //Video player
     implementation(libs.exo.player)
     implementation(libs.exo.player.session)
