@@ -1,16 +1,21 @@
+import org.gradle.api.internal.DocumentationRegistry.BASE_URL
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.hilt.android)
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.ksp)
 }
 
 android {
     namespace = "com.shafi.islamictube"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.shafi.islamictube"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -18,9 +23,15 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
     }
 
     buildTypes {
+
+        debug {
+            buildConfigField( "String", "API_URL", "\"${BASE_URL}\"")
+            buildConfigField( "String", "API_KEY", "\"${API_KEY}\"")
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -85,14 +96,17 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     testImplementation(libs.kotlinx.coroutines.test)
 
-    //Video player
-    implementation(libs.exo.player)
-    implementation(libs.exo.player.session)
-    implementation(libs.exo.player.dash)
-    implementation(libs.exo.player.hls)
-    implementation(libs.exo.player.ui)
-    implementation(libs.compose.video)
+    // Image Loading
+    implementation(libs.landscapist.coil)
+    implementation(libs.landscapist.placeholder)
+    implementation(libs.landscapist.animation)
 
+    // Dependency Injection
+    implementation(libs.hilt.android)
+    implementation(libs.androidx.hilt.navigation.compose)
+    ksp(libs.hilt.compiler)
 
+    // Logger
+    implementation(libs.timber)
 
 }
