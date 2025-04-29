@@ -1,4 +1,5 @@
-import org.gradle.api.internal.DocumentationRegistry.BASE_URL
+import java.io.FileInputStream
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.androidApplication)
@@ -6,6 +7,17 @@ plugins {
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.ksp)
+}
+
+fun getConfigProperty(propertyName: String): String {
+    val configFile = rootProject.file("config.properties")
+    if (configFile.exists()) {
+        val properties = Properties()
+        properties.load(FileInputStream(configFile))
+        return properties.getProperty(propertyName) ?: ""
+    } else {
+        throw GradleException("Missing config.properties file!")
+    }
 }
 
 android {
@@ -27,12 +39,12 @@ android {
     }
 
     buildTypes {
-
-        debug {
-            buildConfigField( "String", "API_URL", "\"${BASE_URL}\"")
-            buildConfigField( "String", "API_KEY", "\"${API_KEY}\"")
+        getByName("debug") {
+            buildConfigField("String", "BASE_URL", "\"${getConfigProperty("BASE_URL_DEBUG")}\"")
+            buildConfigField("String", "API_KEY", "\"${getConfigProperty("API_KEY_DEBUG")}\"")
         }
-        release {
+        getByName("release") {
+            buildConfigField("String", "BASE_URL", "\"${getConfigProperty("BASE_URL_RELEASE")}\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -40,6 +52,7 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -49,6 +62,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
